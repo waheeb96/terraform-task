@@ -142,8 +142,6 @@ tags = {
 
 }
 
-
-
 resource "aws_instance" "mysql" {
 ami = "ami-065deacbcaac64cf2"
 instance_type = "t2.micro"
@@ -153,7 +151,7 @@ subnet_id =  aws_subnet.private_subnet.id
 vpc_security_group_ids = [aws_security_group.sg-mysql.id]
 availability_zone = "eu-central-1b"
 tags = {
-Name = "mysql"
+    Name = "mysql"
 }
 }
 
@@ -167,6 +165,6 @@ vpc_security_group_ids = [aws_security_group.sg-wp.id]
 availability_zone = "eu-central-1a"
 
 tags = {
-Name = "wordpress"
+    Name = "wordpress"
 }
 }
